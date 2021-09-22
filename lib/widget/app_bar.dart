@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nuchange_web_app/util/app_resposive.dart';
+import 'package:nuchange_web_app/util/app_responsive.dart';
 
 class AppBar extends StatelessWidget {
   const AppBar({Key? key}) : super(key: key);

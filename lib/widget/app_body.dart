@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nuchange_web_app/bloc/product_cubit.dart';
 import 'package:nuchange_web_app/network/data/product.dart';
-import 'package:nuchange_web_app/util/app_resposive.dart';
+import 'package:nuchange_web_app/util/app_responsive.dart';
 import 'package:nuchange_web_app/widget/app_dialog.dart';
 
 class AppBody extends StatefulWidget {

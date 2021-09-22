@@ -8,15 +8,15 @@ part 'product_state.dart';
 class ProductsCubit extends Cubit<ProductState> {
   ProductsCubit(InitialProductState initialState) : super(initialState);
 
-  MovieRepository _movieRepository = MovieRepository();
+  ProductRepository _productRepository = ProductRepository();
 
   Future<void> getProducts(bool forceNetwork) async {
     emit(LoadingProductState());
     print(':: kartik bloc get products');
     try {
-      List<Product> productList = await _movieRepository.fetchProductList();
+      List<Product> productList = await _productRepository.fetchProductList();
 
-      print(':: kartik bloc product list $productList');
+      print(':: bloc product list $productList');
 
       emit(LoadedProductState(productList));
     } catch (e) {
@@ -28,17 +28,15 @@ class ProductsCubit extends Cubit<ProductState> {
       List<Product> orignalProductList, String quantity) async {
     emit(LoadingUpdateProductsState());
     List<Product> updatedProducts = [];
-    print('leng : ${orignalProductList.length}');
+
     try {
       orignalProductList.forEach((element) {
         if (element.id == productID) {
-          print('id matched : $quantity');
           element.quantity = quantity;
-          print('id added');
+
           updatedProducts.add(element);
           print(element.category);
         } else {
-          print('elese');
           updatedProducts.add(element);
           //throw an error
         }
@@ -55,14 +53,11 @@ class ProductsCubit extends Cubit<ProductState> {
     emit(LoadingFilterProductState());
 
     try {
-      print(';;;;karrikaa filet : $category');
       List<Product> filterList = [];
       if (category == 'Default') {
         emit(LoadedFilterProductState(orginalProductList));
       } else {
         orginalProductList.forEach((element) {
-          print(':: kartik filter ${element.category}');
-          print(':: kartik filter string $category');
           if (element.category == category) {
             filterList.add(element);
           } else if (category == 'Default') {
