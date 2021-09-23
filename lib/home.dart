@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nuchange_web_app/bloc/product_cubit.dart';
 import 'package:nuchange_web_app/util/app_responsive.dart';
+import 'package:nuchange_web_app/widget/app_bar.dart';
 import 'package:nuchange_web_app/widget/app_body.dart';
 import 'package:nuchange_web_app/widget/app_footer.dart';
+import 'package:nuchange_web_app/widget/app_style.dart';
 
 class HomeView extends StatefulWidget {
   HomeView({Key? key}) : super(key: key);
@@ -25,10 +27,11 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: g1,
       body: SafeArea(
           child: SingleChildScrollView(
         child: Column(
-          children: [AppBar(), AppBody(), AppFooter()],
+          children: [AppBarView(), AppBody(), AppFooter()],
         ),
       )),
     );

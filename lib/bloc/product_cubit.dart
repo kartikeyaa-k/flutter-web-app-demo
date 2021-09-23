@@ -52,6 +52,7 @@ class ProductsCubit extends Cubit<ProductState> {
       String category, List<Product> orginalProductList) async {
     emit(LoadingFilterProductState());
 
+    print('filter category : $category');
     try {
       List<Product> filterList = [];
       if (category == 'Default') {
