@@ -1,7 +1,7 @@
 # Flutter Web App 
 Simple Web Application using Flutter
 - Flutter Bloc 
-- Json parsing
+- JSON parsing
 
 ## Project Description
 1. In this project, The user will be show list of products on the home page. 
