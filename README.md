@@ -1,2 +1,4 @@
-# nuchange-web-app-demo
-This project is created as an assignment given by Nuchange Informatics
+# Flutter Web App 
+Simple Web Application using Flutter
+- Flutter Bloc 
+- Api Integration 
